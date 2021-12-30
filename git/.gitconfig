@@ -1,0 +1,29 @@
+[user]
+  name = Naveen Balawat
+  email = naveen.balawat@gmail.com
+[core]
+  editor = nvim
+  excludesfile = ~/.gitignore
+  pager = delta
+[color]
+  ui = true
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  line-numbers = true
+  syntax-theme = Nord
+[push]
+  default = simple
+[pull]
+  ff = only
+[alias]
+  lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lb-reformat = rebase --empty=drop --strategy-option=theirs --exec 'git diff --diff-filter=MA --no-renames --name-only HEAD~ | xargs -n 10 -P 4 -r lb-format && git commit -a --amend --allow-empty --no-edit'
+[url "https://github.com/"]
+  insteadOf = "gh:"
+[url "git@bitbucket.org"]
+  insteadOf = "bit:"
+  pushInsteadOf = "bit:"
+[init]
+  defaultBranch = main
