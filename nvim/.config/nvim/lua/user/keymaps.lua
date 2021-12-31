@@ -72,10 +72,37 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- Telescope related key remaps
 
+_G.telescope_find_files_in_path = function(path)
+ local _path = path or vim.fn.input("Dir: ", "", "dir")
+ require("telescope.builtin").find_files({search_dirs = {_path}})
+end
+_G.telescope_live_grep_in_path = function(path)
+ local _path = path or vim.fn.input("Dir: ", "", "dir")
+ require("telescope.builtin").live_grep({search_dirs = {_path}})
+end
+_G.telescope_files_or_git_files = function()
+ local utils = require('telescope.utils')
+ local builtin = require('telescope.builtin')
+ local _, ret, _ = utils.get_os_command_output({ 'git', 'rev-parse', '--is-inside-work-tree' })
+ if ret == 0 then
+   builtin.git_files()
+ else
+   builtin.find_files()
+ end
+end
+
+keymap('n', '<leader><space>', ':lua telescope_files_or_git_files()<CR>')
+keymap('n', '<leader>fp', ':lua telescope_find_files_in_path()<CR>')
+keymap('n', '<leader>ft', ':lua telescope_find_files_in_path("./tests")<CR>')
+keymap('n', '<leader>fgp', ':lua telescope_live_grep_in_path()<CR>')
+keymap('n', '<leader>fT', ':lua telescope_live_grep_in_path("./tests")<CR>')
+keymap('n', '<leader>fg', ':Telescope live_grep<CR>')
+keymap('n', '<leader>fo', ':Telescope file_browser<CR>')
+keymap('n', '<leader>fn', ':Telescope find_files<CR>')
+keymap('n', '<leader>fgb', ':Telescope git_branches<CR>')
+keymap('n', '<leader>fbf', ':Telescope buffers<CR>')
+keymap('n', '<leader>fl', ':Telescope lsp_document_symbols<CR>')
+keymap('n', '<leader>ff', ':Telescope live_grep<CR>')
+keymap('n', '<leader>FF', ':Telescope grep_string<CR>')
