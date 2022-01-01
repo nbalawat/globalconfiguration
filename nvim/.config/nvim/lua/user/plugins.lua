@@ -97,8 +97,11 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Add prettier support
-  use "sbdchd/neoformat"
-  -- Automatically set up your configuration after cloning packer.nvim
+  use {
+        'prettier/vim-prettier',
+        run = 'npm install',
+        ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html','lua'}
+    }
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
