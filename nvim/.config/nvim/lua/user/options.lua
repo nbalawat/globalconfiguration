@@ -48,5 +48,6 @@ vim.g['netrw_winsize'] = 20
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
+vim.cmd [[set path+=**]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 -- vim.cmd 'source ~/.config/nvim/lua/user/netrw.vim'

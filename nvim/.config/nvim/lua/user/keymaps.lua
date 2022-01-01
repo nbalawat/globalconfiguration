@@ -39,7 +39,7 @@ keymap("n", "<leader>Y", 'gg"+yG', opts)
 keymap("n", "Y", "yg$", opts)
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
-keymap("n", "J", "mzj`z", opts)
+keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<leader>e", ":Explore 15<CR>", opts)
 
 -- Navigate buffers

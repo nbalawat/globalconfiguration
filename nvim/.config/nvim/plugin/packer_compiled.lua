@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/Users/nbalawat/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  neoformat = {
+    loaded = true,
+    path = "/Users/nbalawat/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/Users/nbalawat/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
