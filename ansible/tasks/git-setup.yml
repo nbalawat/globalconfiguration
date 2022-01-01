@@ -1,0 +1,14 @@
+- name: Git Setup Personal Projects - Email
+  git_config:
+    name: user.email
+    scope: global
+    value: "naveen.balawat@gmail.com"
+  tags:
+  - git-personal
+- name: Git Setup Personal Projects - Name
+  git_config:
+    name: user.name
+    scope: global
+    value: "Naveen Balawat"
+  tags:
+  - git-personal

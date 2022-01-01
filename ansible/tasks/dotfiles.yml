@@ -1,0 +1,29 @@
+# install stow to manage the symlinks
+- name: Installing stow
+  apt: name=stow
+  tags:
+    - install
+    - dotfiles
+    - stow
+
+# clone the repository from git
+- name: Cloning all the configuration files
+  ansible.builtin.git:
+    repo: 'git@github.com:nbalawat/globalconfiguration.git'
+    dest: "{{ lookup('env', 'HOME') }}/globalconfiguration"
+    recursive: yes 
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - install
+    - dotfiles
+    - stow
+
+# this is how you stow all the configuration files to ensure that everything works
+- name: Stow dotfiles
+  shell: stow -t $HOME -S globalconfiguration/nvim
+  tags:
+    - install
+    - dotfiles
+    - stow

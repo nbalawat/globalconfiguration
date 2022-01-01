@@ -1,0 +1,37 @@
+- hosts: localhost
+  vars:
+    github_source_key: "./.ssh/id_ed25519"
+    github_dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    githubbwork_source_key: "./.ssh/id_ed25519_genpact"
+    githubwork_dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519_genpact"
+    azconsulting_source_key: "./.ssh/nuventodigital_rsa"
+    azconsulting_dest_key: "{{ lookup('env', 'HOME') }}/.ssh/nuventodigital_rsa"
+    awsstartup_source_key: "./.ssh/codecommit_rsa"
+    awsstartup_dest_key: "{{ lookup('env', 'HOME') }}/.ssh/codecommit_rsa"
+    startupprojects: "{{ lookup('env', 'HOME') }}/startupprojects"
+    consultingprojects: "{{ lookup('env', 'HOME') }}/consultingprojects"
+    workprojects: "{{ lookup('env', 'HOME') }}/workprojects"
+
+  environment:
+    PATH: /root/.nvm/versions/node/v16.4.2/bin:{{ ansible_env.PATH }}
+    NODE: /root/.nvm/versions/node/v16.4.2/bin/node
+    NPM: /root/.nvm/versions/node/v16.4.2/bin/npm
+  pre_tasks:
+    - name: Update Apt
+      become: true
+      apt:
+        force_apt_get: true
+        update_cache: true
+        state: present
+      tags:
+        - install
+        - core
+  tasks:
+    # - import_tasks: tasks/git-setup.yml
+    # - import_tasks: tasks/core-setup.yml
+    - import_tasks: tasks/node-setup.yml
+    - import_tasks: tasks/npm-packages.yml
+    - import_tasks: tasks/zsh-setup.yml
+    # - import_tasks: tasks/nvim-setup.yml
+    # - import_tasks: tasks/dotfiles.yml
+    # - import_tasks: tasks/productivity-tools.yml

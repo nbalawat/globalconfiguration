@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker build . -t dev-setup
+docker build . -f nvim.Dockerfile -t dev-nvim-setup

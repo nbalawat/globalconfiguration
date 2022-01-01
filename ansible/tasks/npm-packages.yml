@@ -1,0 +1,62 @@
+- name: Install the required packages
+  npm:
+    name: yarn
+    global: yes
+  tags:
+    - install
+    - node
+  loop:
+    - yarn
+    - eslint
+    - prettier
+    - nodemon
+    - typescript
+    - typescript-language-server
+    - pm2
+    - ts-node
+# - name: Install eslint
+#   npm:
+#     name: eslint
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install Typescript server
+#   npm:
+#     name: typescript-language-server
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install Typescript
+#   npm:
+#     name: typescript
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install TS-Node
+#   npm:
+#     name: ts-node
+#     global: yes
+#   tags:
+#     - install
+#     - node
+
+# - name: Install all global packages ( yarn, eslint, typescript, language server, pm2 and others )
+#   npm:
+#     name: yarn
+#     executable: "$HOME/.nvm/versions/node/v16.4.2/bin/npm"
+#     global: yes
+#   tags:
+#     - install
+#     - node
+#   loop:
+#     - yarn
+#     - eslint
+#     - prettier
+#     - nodemon
+#     - typescript
+#     - typescript-language-server
+#     - pm2
+#     - ts-node
