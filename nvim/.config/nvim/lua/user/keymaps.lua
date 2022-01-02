@@ -1,14 +1,14 @@
 local opts = { noremap = true, silent = true }
-
+local optsnoremap = { noremap = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+-- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' ' 
+vim.g.maplocalleader = ' ' 
 
 -- Modes
 --   normal_mode = "n",
@@ -93,16 +93,11 @@ _G.telescope_files_or_git_files = function()
  end
 end
 
--- keymap('n', '<leader><space>', ':lua telescope_files_or_git_files()<CR>', opts)
--- keymap('n', '<leader>fp', ':lua telescope_find_files_in_path()<CR>', opts)
--- keymap('n', '<leader>ft', ':lua telescope_find_files_in_path("./tests")<CR>', opts)
--- keymap('n', '<leader>fgp', ':lua telescope_live_grep_in_path()<CR>', opts)
--- keymap('n', '<leader>fT', ':lua telescope_live_grep_in_path("./tests")<CR>', opts)
--- keymap('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
--- keymap('n', '<leader>fo', ':Telescope file_browser<CR>', opts)
--- keymap('n', '<leader>fn', ':Telescope find_files<CR>', opts)
--- keymap('n', '<leader>fgb', ':Telescope git_branches<CR>', opts)
--- keymap('n', '<leader>fbf', ':Telescope buffers<CR>', opts)
--- keymap('n', '<leader>fl', ':Telescope lsp_document_symbols<CR>', opts)
--- keymap('n', '<leader>ff', ':Telescope live_grep<CR>', opts)
--- keymap('n', '<leader>FF', ':Telescope grep_string<CR>', opts)
+-- keymap('n', '<leader>ff', ':lua telescope_files_or_git_files()<CR>', optsnoremap)
+keymap('n', '<leader>n', ':!echo "Naveen"<CR>', optsnoremap)
+keymap('n', '<leader>saf',  ':lua telescope_files_or_git_files()<CR>', optsnoremap)
+keymap('n', '<leader>sg', ':Telescope live_grep<CR>',optsnoremap)
+keymap('n', '<leader>sb', ':Telescope file_browser<CR>',optsnoremap)
+keymap('n', '<leader>sgb', ':Telescope git_branches<CR>',optsnoremap)
+keymap('n', '<leader>sf', ':Telescope buffers<CR>',optsnoremap)
+keymap('n', '<leader>sw', ':Telescope grep_string<CR>',optsnoremap)
