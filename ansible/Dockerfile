@@ -15,8 +15,8 @@ ARG TAGS
 RUN addgroup --gid 1000 naveen
 RUN adduser --gecos naveen --uid 1000 --gid 1000 --disabled-password naveen
 RUN usermod -aG sudo naveen
-USER naveen
-WORKDIR /home/naveen
+USER root
+WORKDIR /root
 
 FROM naveen
 COPY . .

@@ -1,22 +1,22 @@
-# - name: kdenlive ppa (ppa:kdenlive/kdenlive-stable)
-#   become: true
-#   apt_repository:
-#    repo: ppa:kdenlive/kdenlive-stable
-#    state: present
-#    update_cache: True
-#   tags:
-#     - install
-#     - productivity
+- name: kdenlive ppa (ppa:kdenlive/kdenlive-stable)
+  become: true
+  apt_repository:
+   repo: ppa:kdenlive/kdenlive-stable
+   state: present
+   update_cache: True
+  tags:
+    - install
+    - productivity
 
-# - name: shutter ppa (ppa:linuxuprising/shutter)
-#   become: true
-#   apt_repository:
-#    repo: ppa:linuxuprising/shutter
-#    state: present
-#    update_cache: True
-#   tags:
-#     - install
-#     - productivity
+- name: shutter ppa (ppa:linuxuprising/shutter)
+  become: true
+  apt_repository:
+   repo: ppa:linuxuprising/shutter
+   state: present
+   update_cache: True
+  tags:
+    - install
+    - productivity
 
 - name: Install Neovim on the machine
   become: true

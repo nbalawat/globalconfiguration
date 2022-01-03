@@ -16,6 +16,7 @@
     PATH: /root/.nvm/versions/node/v16.4.2/bin:{{ ansible_env.PATH }}
     NODE: /root/.nvm/versions/node/v16.4.2/bin/node
     NPM: /root/.nvm/versions/node/v16.4.2/bin/npm
+    USER: root
   pre_tasks:
     - name: Update Apt
       become: true
