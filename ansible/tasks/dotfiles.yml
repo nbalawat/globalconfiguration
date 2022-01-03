@@ -21,8 +21,15 @@
     - stow
 
 # this is how you stow all the configuration files to ensure that everything works
-- name: Stow dotfiles
+- name: Stow NVIM configuration
   shell: stow -t $HOME -S globalconfiguration/nvim
+  tags:
+    - install
+    - dotfiles
+    - stow
+
+- name: Stow zsh configuration
+  shell: stow -t $HOME -S globalconfiguration/zsh
   tags:
     - install
     - dotfiles
