@@ -5,8 +5,9 @@ local xmap = U.keymap.xmap
 local omap = U.keymap.omap
 local tmap = U.keymap.tmap
 
-nmap(" ", "<Nop>")
-vmap(" ", "<Nop>")
+local keymap = vim.api.nvim_set_keymap
+-- Remap space as leader key
+keymap("", "<Space>", "<Nop>", { noremap = true, silent = true} )
 
 vim.g.mapleader = ' ' 
 print ("leader mapping is done")
