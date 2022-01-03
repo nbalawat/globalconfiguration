@@ -18,13 +18,13 @@
     - install
     - productivity
 
-- name: Install Neovim on the machine
-  become: true
-  apt:
-    name: neovim
-  tags:
-    - install
-    - productivity
+# - name: Install Neovim on the machine
+#   become: true
+#   apt:
+#     name: neovim
+#   tags:
+#     - install
+#     - productivity
 
 - name: Install zoxide
   ansible.builtin.shell: >
