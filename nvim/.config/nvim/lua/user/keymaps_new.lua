@@ -118,11 +118,15 @@ nmap( '<leader>sof', ':Telescope buffers<CR>')
 -- search for all the commits
 nmap( '<leader>scf', ':Telescope git_commits<CR>')
 -- grep string in all files
-nmap( '<leader>swf', ':Telescope live_grep<CR>')
+nmap( '<leader>gaf', ':Telescope live_grep<CR>')
 -- grep under the cursor in all files
-nmap( '<leader>sw', ':Telescope grep_string<CR>')
+nmap( '<leader>gs', ':Telescope grep_string<CR>')
 
 -- quick fix lists
 nmap( '<leader>sq', ':Telescope quickfix<CR>')
 -- location lists 
 nmap( '<leader>sl', ':Telescope loclist<CR>')
+
+
+-- NVIM Tree related
+nmap( '<leader>e', ':NvimTreeToggle<CR>')

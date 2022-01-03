@@ -54,6 +54,8 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use 'kyazdani42/nvim-tree.lua'-- This is needed to fix lsp doc highlight
+  use 'kyazdani42/nvim-web-devicons' -- optional, for file icon
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
