@@ -6,7 +6,7 @@ sudo apt upgrade
 
 # install curl and other basic tools
 sudo apt-get --yes install curl
-sudo apt-get --yes install curl
+sudo apt-get --yes install sudo
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
@@ -18,28 +18,6 @@ sudo nvm install lts/dubnium
 sudo nvm install lts/carbon
 sudo nvm use 16.4.2
 
-# Install Stow
-sudo apt-get install -y stow
-
-# Install Yarn
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt install --yes --no-install-recommends yarn
-
-# Install PM2
-sudo npm install pm2@latest -g
-
-# Install Git to enable download of information from the repository
-sudo apt install --yes git
-
-# install node js latest version and yarn as the package manager
-sudo apt install --yes nodejs
-sudo apt install --yes npm
-
-# Install Python
-sudo apt install -y python3-pip
-sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-venv
-
-# Create virtual environments
 mkdir pythonenvs
 cd pythonenvs
 python3 -m venv pythoncore
@@ -48,8 +26,8 @@ source pythoncore/bin/activate
 # install windows manager
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
-# install a terminal multiplexer
-sudo apt install tmux
+# install a terminal multiplexer and other productivity tools
+sudo apt install tmux zoxide fzf
 
 # install the favorite shells on the machine
 sudo apt install --yes fish
