@@ -1,6 +1,6 @@
 - name: Ensure .ssh key exists for github
   file:
-    dest: "{{ github_desk_key | dirname }}"
+    dest: "{{ github_dest_key | dirname }}"
     mode: 0700
     state: directory
   tags:
