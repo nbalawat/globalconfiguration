@@ -56,9 +56,11 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use 'kyazdani42/nvim-tree.lua'-- This is needed to fix lsp doc highlight
   use 'kyazdani42/nvim-web-devicons' -- optional, for file icon
-
+  -- Add the formatter
   -- Colorschemes
+  use 'mhartington/formatter.nvim'
   use "folke/tokyonight.nvim"
+  use 'EdenEast/nightfox.nvim' 
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
