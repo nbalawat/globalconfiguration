@@ -83,6 +83,7 @@ export BROWSER="chrome"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
+export PATH="/Users/nbalawat/.local/share/solana/install/active_release/bin:$PATH"
 
 # remap caps to escape
 # setxkbmap -option caps:escape
