@@ -85,6 +85,9 @@ export BROWSER="chrome"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export PATH="/Users/nbalawat/.local/share/solana/install/active_release/bin:$PATH"
 
+ export NVM_DIR=~/.nvm
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # remap caps to escape
 # setxkbmap -option caps:escape
 # swap escape and caps
