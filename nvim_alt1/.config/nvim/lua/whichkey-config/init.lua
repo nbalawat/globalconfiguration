@@ -32,12 +32,23 @@ local mappings = {
   w = {":w<cr>", "Save"},
   x = {":bdelete<cr>", "Close"},
   E = {":e ~/.config/nvim/init.lua<cr>", "Edit config"},
+  d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+  D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   t = {
     t = {":ToggleTerm<cr>", "Split Below"},
     f = {toggle_float, "Floating Terminal"},
     l = {toggle_lazygit, "LazyGit"}
+  },
+  s = {
+    name = "Telescope find",
+    f = {":Telescope find_files<cr>", "Telescope Find Files"},
+    g = {":Telescope live_grep<cr>", "Telescope Live Grep"},
+    s = {":Telescope grep_string<cr>", "Telescope Search String"},
+    m = {":Telescope man_pages<cr>", "Telescope Man Pages"},
+    b = {":Telescope buffers<cr>", "Telescope Open Buffers"},
+    q = {":Telescope quickfix<cr>", "Telescope Quickfix list"},
   },
   l = {
     name = "LSP",
@@ -51,8 +62,6 @@ local mappings = {
       "List Workspace Folders"
     },
     t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition"},
-    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
-    D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
     r = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"},
     R = {'<cmd>Lspsaga rename<cr>', "Rename"},
     a = {'<cmd>Lspsaga code_action<cr>', "Code Action"},
