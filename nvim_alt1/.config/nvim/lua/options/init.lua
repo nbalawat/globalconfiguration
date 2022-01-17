@@ -37,6 +37,6 @@ vim.o.relativenumber = true
 vim.o.foldmethod = "indent"
 vim.bo.expandtab = true
 vim.o.foldnestmax = 10
-vim.o.nofoldenable = true 
+vim.o.foldenable = false 
 vim.o.foldlevel = 2
 
