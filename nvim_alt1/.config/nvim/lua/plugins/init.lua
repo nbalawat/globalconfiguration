@@ -1,5 +1,4 @@
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {'rose-pine/neovim', config = "vim.cmd('colorscheme rose-pine')"}
   use {
@@ -64,4 +63,5 @@ return require('packer').startup(function(use)
   use {'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')"}
   use {"folke/zen-mode.nvim", config = 'require("zen-mode-config")'}
   use {"folke/twilight.nvim", config = "require('twilight-config')"}
+  use {"mfussenegger/nvim-dap", config = "require('debug-config')"}
 end)

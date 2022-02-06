@@ -41,6 +41,15 @@ local mappings = {
     f = {toggle_float, "Floating Terminal"},
     l = {toggle_lazygit, "LazyGit"}
   },
+  e = {
+    name = "Debugging in NVIM",
+    t = {"<cmd>lua require'dap'.tggle_breakpoint()", "Toggle Break Point"},
+    k = {"<cmd>lua require'dap'.step_out()", "Step Out"},
+    l = {"<cmd>lua require'dap'.step_into()", "Step Into"},
+    j = {"<cmd>lua require'dap'.step_over()", "Step Over"},
+    s = {"<cmd>lua require'dap'.stop()", "Stop"},
+    n = {"<cmd>lua require'dap'.continue()", "Continue"},
+  },
   s = {
     name = "Telescope find",
     f = {":Telescope find_files<cr>", "Telescope Find Files"},

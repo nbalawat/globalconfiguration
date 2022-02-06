@@ -94,5 +94,8 @@ export PATH="/Users/nbalawat/.local/share/solana/install/active_release/bin:$PAT
 # setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+function https-server() {
+  http-server --ssl --cert ~/.localhost-ssl/localhost.crt --key ~/.localhost-ssl/localhost.key
+}
 
 
